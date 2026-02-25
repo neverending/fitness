@@ -5,7 +5,7 @@ Page({
   data: {
     userInfo: {
       id: '1',
-      name: '张三',
+      name: '王五',
       avatar: '',
       roles: ['member', 'trainer', 'manager', 'boss'] // 测试数据：同时拥有所有角色
     },
