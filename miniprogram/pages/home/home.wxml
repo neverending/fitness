@@ -1,0 +1,62 @@
+<!--pages/home/home.wxml-->
+<view class="home-container">
+  <swiper 
+    class="role-swiper"
+    current="{{currentIndex}}"
+    bindchange="onSwiperChange"
+    duration="300"
+    circular="{{false}}">
+    
+    <!-- 会员页面 -->
+    <swiper-item wx:if="{{userRoles[0].type === 'member'}}">
+      <member-page userInfo="{{userInfo}}"></member-page>
+    </swiper-item>
+    
+    <!-- 私教页面 -->
+    <swiper-item wx:if="{{userRoles[0].type === 'trainer'}}">
+      <trainer-page userInfo="{{userInfo}}"></trainer-page>
+    </swiper-item>
+    
+    <!-- 店长页面 -->
+    <swiper-item wx:if="{{userRoles[0].type === 'manager'}}">
+      <manager-page userInfo="{{userInfo}}"></manager-page>
+    </swiper-item>
+    
+    <!-- 老板页面 -->
+    <swiper-item wx:if="{{userRoles[0].type === 'boss'}}">
+      <boss-page userInfo="{{userInfo}}"></boss-page>
+    </swiper-item>
+    
+    <swiper-item wx:if="{{userRoles[1]}}">
+      <member-page wx:if="{{userRoles[1].type === 'member'}}" userInfo="{{userInfo}}"></member-page>
+      <trainer-page wx:if="{{userRoles[1].type === 'trainer'}}" userInfo="{{userInfo}}"></trainer-page>
+      <manager-page wx:if="{{userRoles[1].type === 'manager'}}" userInfo="{{userInfo}}"></manager-page>
+      <boss-page wx:if="{{userRoles[1].type === 'boss'}}" userInfo="{{userInfo}}"></boss-page>
+    </swiper-item>
+    
+    <swiper-item wx:if="{{userRoles[2]}}">
+      <member-page wx:if="{{userRoles[2].type === 'member'}}" userInfo="{{userInfo}}"></member-page>
+      <trainer-page wx:if="{{userRoles[2].type === 'trainer'}}" userInfo="{{userInfo}}"></trainer-page>
+      <manager-page wx:if="{{userRoles[2].type === 'manager'}}" userInfo="{{userInfo}}"></manager-page>
+      <boss-page wx:if="{{userRoles[2].type === 'boss'}}" userInfo="{{userInfo}}"></boss-page>
+    </swiper-item>
+    
+    <swiper-item wx:if="{{userRoles[3]}}">
+      <member-page wx:if="{{userRoles[3].type === 'member'}}" userInfo="{{userInfo}}"></member-page>
+      <trainer-page wx:if="{{userRoles[3].type === 'trainer'}}" userInfo="{{userInfo}}"></trainer-page>
+      <manager-page wx:if="{{userRoles[3].type === 'manager'}}" userInfo="{{userInfo}}"></manager-page>
+      <boss-page wx:if="{{userRoles[3].type === 'boss'}}" userInfo="{{userInfo}}"></boss-page>
+    </swiper-item>
+  </swiper>
+
+  <!-- 底部光点指示器 -->
+  <view class="indicator-container">
+    <view 
+      class="indicator-dot {{indicatorDots[index] ? 'active' : ''}}" 
+      wx:for="{{userRoles}}" 
+      wx:key="index"
+      data-index="{{index}}"
+      bindtap="onDotTap">
+    </view>
+  </view>
+</view>

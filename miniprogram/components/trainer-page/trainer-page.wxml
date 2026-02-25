@@ -1,0 +1,33 @@
+<!--components/trainer-page/trainer-page.wxml-->
+<view class="trainer-page">
+  <view class="page-header">
+    <text class="page-icon">{{userInfo.icon}}</text>
+    <text class="page-title">私教中心</text>
+  </view>
+  
+  <view class="card-container">
+    <view class="info-card">
+      <text class="card-title">{{userInfo.name}}教练</text>
+      <text class="card-desc">私教专属功能</text>
+    </view>
+  </view>
+
+  <view class="action-grid">
+    <view class="action-item" bindtap="viewSchedule">
+      <view class="action-icon">📅</view>
+      <text class="action-label">我的排课</text>
+    </view>
+    <view class="action-item" bindtap="manageMembers">
+      <view class="action-icon">👥</view>
+      <text class="action-label">会员管理</text>
+    </view>
+    <view class="action-item" bindtap="addClass">
+      <view class="action-icon">➕</view>
+      <text class="action-label">添加课程</text>
+    </view>
+    <view class="action-item">
+      <view class="action-icon">📊</view>
+      <text class="action-label">教学统计</text>
+    </view>
+  </view>
+</view>

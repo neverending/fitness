@@ -1,0 +1,33 @@
+<!--components/member-page/member-page.wxml-->
+<view class="member-page">
+  <view class="page-header">
+    <text class="page-icon">{{userInfo.icon}}</text>
+    <text class="page-title">会员中心</text>
+  </view>
+  
+  <view class="card-container">
+    <view class="info-card">
+      <text class="card-title">欢迎，{{userInfo.name}}</text>
+      <text class="card-desc">会员专属功能</text>
+    </view>
+  </view>
+
+  <view class="action-grid">
+    <view class="action-item" bindtap="checkIn">
+      <view class="action-icon">✓</view>
+      <text class="action-label">签到打卡</text>
+    </view>
+    <view class="action-item" bindtap="bookClass">
+      <view class="action-icon">📅</view>
+      <text class="action-label">预约课程</text>
+    </view>
+    <view class="action-item" bindtap="viewSchedule">
+      <view class="action-icon">📋</view>
+      <text class="action-label">课程表</text>
+    </view>
+    <view class="action-item">
+      <view class="action-icon">💪</view>
+      <text class="action-label">训练记录</text>
+    </view>
+  </view>
+</view>
