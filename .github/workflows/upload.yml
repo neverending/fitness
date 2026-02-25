@@ -38,9 +38,4 @@ jobs:
           ls -al private.key
           cat private.key | head -5
           # 执行上传命令
-          miniprogram-ci upload \
-            --pp ./miniprogram \                    # 项目路径，如果代码在子文件夹，请修改
-            --pkp private.key \           # 私钥文件路径
-            --appid "wxd92dc382e97e9364" \    # 替换为你的真实 AppID
-            --uv "5.7.0" \   # 用 Git 标签名作为版本号
-            --desc "CI自动构建: ${GITHUB_SHA}" # 版本描述
+          miniprogram-ci upload --pp ./miniprogram --pkp private.key --appid "wxd92dc382e97e9364" --uv "5.7.0" --desc "CI自动构建: ${GITHUB_SHA}"
