@@ -38,7 +38,7 @@ jobs:
           
           # 执行上传命令
           miniprogram-ci upload \
-            --pp ./ \                    # 项目路径，如果代码在子文件夹，请修改
+            --pp ./miniprogram \                    # 项目路径，如果代码在子文件夹，请修改
             --pkp private.key \           # 私钥文件路径
             --appid "wxd92dc382e97e9364" \    # 替换为你的真实 AppID
             --uv "${GITHUB_REF_NAME}" \   # 用 Git 标签名作为版本号
