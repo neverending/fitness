@@ -37,6 +37,6 @@ jobs:
           echo "${{ secrets.WECHAT_PRIVATE_KEY }}" > private.key
           ls -al private.key
           cat private.key | head -5
-          echo "${GITHUB_TAG_NAME}"
+          echo "${GITHUB_REF_NAME}"
           # 执行上传命令
-          miniprogram-ci upload --pp ./ --pkp private.key --appid "wxd92dc382e97e9364" --uv "${GITHUB_TAG_NAME}" --desc "CI自动构建: ${GITHUB_SHA}"
+          miniprogram-ci upload --pp ./ --pkp private.key --appid "wxd92dc382e97e9364" --uv "${GITHUB_REF_NAME}" --desc "CI自动构建: ${GITHUB_SHA}"
