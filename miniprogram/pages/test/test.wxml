@@ -35,11 +35,11 @@
   <view class="section">
     <text class="section-title">保洁角色检查</text>
     <view class="check-result">
-      <text wx:if="{{userRoles.some(r => r.type === 'cleaner')}}" class="success">✅ 保洁角色存在</text>
+      <text wx:if="{{hasCleanerRole}}" class="success">✅ 保洁角色存在</text>
       <text wx:else class="error">❌ 保洁角色不存在</text>
     </view>
     <view class="check-result">
-      <text>保洁角色索引: {{userRoles.findIndex(r => r.type === 'cleaner')}}</text>
+      <text>保洁角色索引: {{cleanerRoleIndex}}</text>
     </view>
   </view>
 

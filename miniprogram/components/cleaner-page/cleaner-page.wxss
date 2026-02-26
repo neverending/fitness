@@ -175,19 +175,19 @@
   color: white;
 }
 
-.status-badge.待完成 {
+.status-badge.pending {
   background-color: #FF9800;
 }
 
-.status-badge.进行中 {
+.status-badge.inprogress {
   background-color: #2196F3;
 }
 
-.status-badge.已完成 {
+.status-badge.completed {
   background-color: #4CAF50;
 }
 
-.status-badge.未开始 {
+.status-badge.notstarted {
   background-color: #9E9E9E;
 }
 

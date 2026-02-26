@@ -43,9 +43,12 @@
           </view>
         </view>
         <view class="task-status">
-          <text class="status-badge {{item.status}}">{{item.status}}</text>
-          <button 
-            class="complete-btn" 
+          <text class="status-badge pending" wx:if="{{item.status === '待完成'}}">{{item.status}}</text>
+          <text class="status-badge inprogress" wx:if="{{item.status === '进行中'}}">{{item.status}}</text>
+          <text class="status-badge completed" wx:if="{{item.status === '已完成'}}">{{item.status}}</text>
+          <text class="status-badge notstarted" wx:if="{{item.status === '未开始'}}">{{item.status}}</text>
+          <button
+            class="complete-btn"
             wx:if="{{item.status !== '已完成'}}"
             data-id="{{item.id}}"
             bind:tap="markTaskComplete"
