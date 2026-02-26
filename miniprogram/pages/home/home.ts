@@ -7,7 +7,7 @@ Page({
       id: '1',
       name: '王五',
       avatar: '',
-      roles: ['member', 'trainer', 'manager', 'boss'] // 测试数据：同时拥有所有角色
+      roles: ['member', 'trainer', 'manager', 'boss', 'cleaner'] // 测试数据：同时拥有所有角色
     },
     userRoles: [] as UserRoleInfo[],
     currentIndex: 0,

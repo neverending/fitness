@@ -3,7 +3,8 @@
     "member-page": "/components/member-page/member-page",
     "trainer-page": "/components/trainer-page/trainer-page",
     "manager-page": "/components/manager-page/manager-page",
-    "boss-page": "/components/boss-page/boss-page"
+    "boss-page": "/components/boss-page/boss-page",
+    "cleaner-page": "/components/cleaner-page/cleaner-page"
   },
   "navigationStyle": "custom"
 }

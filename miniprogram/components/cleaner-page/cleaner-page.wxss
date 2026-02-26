@@ -1,0 +1,286 @@
+/* components/cleaner-page/cleaner-page.wxss */
+.cleaner-container {
+  padding: 20rpx;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+/* 头部信息 */
+.header {
+  background: linear-gradient(135deg, #4CAF50, #8BC34A);
+  border-radius: 20rpx;
+  padding: 40rpx 30rpx;
+  color: white;
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 12rpx rgba(76, 175, 80, 0.2);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.role-icon {
+  font-size: 60rpx;
+  margin-right: 20rpx;
+}
+
+.role-name {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.welcome {
+  font-size: 28rpx;
+  opacity: 0.9;
+}
+
+/* 统计卡片 */
+.stats-card {
+  background: white;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.stats-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  color: #333;
+}
+
+.progress-container {
+  margin-bottom: 20rpx;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20rpx;
+  background-color: #e0e0e0;
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin-bottom: 10rpx;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50, #8BC34A);
+  border-radius: 10rpx;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 24rpx;
+  color: #666;
+  text-align: center;
+}
+
+.completed-areas {
+  font-size: 26rpx;
+  color: #4CAF50;
+  background-color: #E8F5E9;
+  padding: 15rpx 20rpx;
+  border-radius: 10rpx;
+  margin-top: 15rpx;
+}
+
+/* 分区标题 */
+.section {
+  background: white;
+  border-radius: 20rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 25rpx;
+  color: #333;
+  border-left: 8rpx solid #4CAF50;
+  padding-left: 20rpx;
+}
+
+/* 任务列表 */
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25rpx;
+  background-color: #f9f9f9;
+  border-radius: 15rpx;
+  border-left: 6rpx solid #4CAF50;
+  transition: all 0.3s ease;
+}
+
+.task-item.completed {
+  opacity: 0.7;
+  border-left-color: #9E9E9E;
+}
+
+.task-item.in-progress {
+  border-left-color: #FF9800;
+}
+
+.task-info {
+  flex: 1;
+}
+
+.task-name {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.task-details {
+  display: flex;
+  gap: 20rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.task-area {
+  background-color: #E3F2FD;
+  color: #2196F3;
+  padding: 4rpx 12rpx;
+  border-radius: 6rpx;
+}
+
+.task-time {
+  color: #757575;
+}
+
+.task-status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10rpx;
+}
+
+.status-badge {
+  font-size: 22rpx;
+  padding: 4rpx 12rpx;
+  border-radius: 12rpx;
+  color: white;
+}
+
+.status-badge.待完成 {
+  background-color: #FF9800;
+}
+
+.status-badge.进行中 {
+  background-color: #2196F3;
+}
+
+.status-badge.已完成 {
+  background-color: #4CAF50;
+}
+
+.status-badge.未开始 {
+  background-color: #9E9E9E;
+}
+
+.complete-btn {
+  background-color: #4CAF50 !important;
+  color: white !important;
+  font-size: 24rpx !important;
+  padding: 8rpx 20rpx !important;
+  border-radius: 20rpx !important;
+  line-height: 1.4 !important;
+}
+
+.complete-btn::after {
+  border: none !important;
+}
+
+/* 清洁用品列表 */
+.supplies-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20rpx;
+  margin-bottom: 30rpx;
+}
+
+.supply-item {
+  background-color: #F3E5F5;
+  border-radius: 15rpx;
+  padding: 25rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.supply-name {
+  font-size: 28rpx;
+  color: #7B1FA2;
+  margin-bottom: 15rpx;
+  font-weight: bold;
+}
+
+.supply-quantity {
+  display: flex;
+  align-items: baseline;
+  gap: 8rpx;
+}
+
+.quantity {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #4A148C;
+}
+
+.unit {
+  font-size: 24rpx;
+  color: #7B1FA2;
+}
+
+.apply-btn {
+  background-color: #7B1FA2 !important;
+  color: white !important;
+  width: 100%;
+  border-radius: 25rpx !important;
+  font-size: 28rpx !important;
+  padding: 20rpx !important;
+}
+
+.apply-btn::after {
+  border: none !important;
+}
+
+/* 功能按钮 */
+.action-buttons {
+  display: flex;
+  gap: 20rpx;
+  margin-top: 30rpx;
+}
+
+.action-btn {
+  flex: 1;
+  background-color: white !important;
+  color: #4CAF50 !important;
+  border: 2rpx solid #4CAF50 !important;
+  border-radius: 25rpx !important;
+  font-size: 28rpx !important;
+  padding: 20rpx !important;
+}
+
+.action-btn.primary {
+  background-color: #4CAF50 !important;
+  color: white !important;
+  border: none !important;
+}
+
+.action-btn::after {
+  border: none !important;
+}

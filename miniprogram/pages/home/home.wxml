@@ -27,11 +27,17 @@
       <boss-page userInfo="{{userInfo}}"></boss-page>
     </swiper-item>
     
+    <!-- 保洁页面 -->
+    <swiper-item wx:if="{{userRoles[0].type === 'cleaner'}}">
+      <cleaner-page userInfo="{{userInfo}}"></cleaner-page>
+    </swiper-item>
+    
     <swiper-item wx:if="{{userRoles[1]}}">
       <member-page wx:if="{{userRoles[1].type === 'member'}}" userInfo="{{userInfo}}"></member-page>
       <trainer-page wx:if="{{userRoles[1].type === 'trainer'}}" userInfo="{{userInfo}}"></trainer-page>
       <manager-page wx:if="{{userRoles[1].type === 'manager'}}" userInfo="{{userInfo}}"></manager-page>
       <boss-page wx:if="{{userRoles[1].type === 'boss'}}" userInfo="{{userInfo}}"></boss-page>
+      <cleaner-page wx:if="{{userRoles[1].type === 'cleaner'}}" userInfo="{{userInfo}}"></cleaner-page>
     </swiper-item>
     
     <swiper-item wx:if="{{userRoles[2]}}">
@@ -39,6 +45,7 @@
       <trainer-page wx:if="{{userRoles[2].type === 'trainer'}}" userInfo="{{userInfo}}"></trainer-page>
       <manager-page wx:if="{{userRoles[2].type === 'manager'}}" userInfo="{{userInfo}}"></manager-page>
       <boss-page wx:if="{{userRoles[2].type === 'boss'}}" userInfo="{{userInfo}}"></boss-page>
+      <cleaner-page wx:if="{{userRoles[2].type === 'cleaner'}}" userInfo="{{userInfo}}"></cleaner-page>
     </swiper-item>
     
     <swiper-item wx:if="{{userRoles[3]}}">
@@ -46,6 +53,15 @@
       <trainer-page wx:if="{{userRoles[3].type === 'trainer'}}" userInfo="{{userInfo}}"></trainer-page>
       <manager-page wx:if="{{userRoles[3].type === 'manager'}}" userInfo="{{userInfo}}"></manager-page>
       <boss-page wx:if="{{userRoles[3].type === 'boss'}}" userInfo="{{userInfo}}"></boss-page>
+      <cleaner-page wx:if="{{userRoles[3].type === 'cleaner'}}" userInfo="{{userInfo}}"></cleaner-page>
+    </swiper-item>
+    
+    <swiper-item wx:if="{{userRoles[4]}}">
+      <member-page wx:if="{{userRoles[4].type === 'member'}}" userInfo="{{userInfo}}"></member-page>
+      <trainer-page wx:if="{{userRoles[4].type === 'trainer'}}" userInfo="{{userInfo}}"></trainer-page>
+      <manager-page wx:if="{{userRoles[4].type === 'manager'}}" userInfo="{{userInfo}}"></manager-page>
+      <boss-page wx:if="{{userRoles[4].type === 'boss'}}" userInfo="{{userInfo}}"></boss-page>
+      <cleaner-page wx:if="{{userRoles[4].type === 'cleaner'}}" userInfo="{{userInfo}}"></cleaner-page>
     </swiper-item>
   </swiper>
 

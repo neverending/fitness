@@ -1,0 +1,79 @@
+<!-- components/cleaner-page/cleaner-page.wxml -->
+<view class="cleaner-container">
+  <!-- 头部信息 -->
+  <view class="header">
+    <view class="user-info">
+      <text class="role-icon">🧹</text>
+      <text class="role-name">保洁工作台</text>
+    </view>
+    <view class="welcome">您好，{{userInfo.name}}！</view>
+  </view>
+
+  <!-- 今日统计 -->
+  <view class="stats-card">
+    <view class="stats-title">今日工作进度</view>
+    <view class="progress-container">
+      <view class="progress-bar">
+        <view class="progress-fill" style="width: {{(todayStats.completed / todayStats.total) * 100}}%"></view>
+      </view>
+      <view class="progress-text">{{todayStats.completed}}/{{todayStats.total}} 个任务</view>
+    </view>
+    <view class="completed-areas">
+      已清洁区域：{{todayStats.areas.join('、')}}
+    </view>
+  </view>
+
+  <!-- 任务列表 -->
+  <view class="section">
+    <view class="section-title">今日清洁任务</view>
+    <view class="task-list">
+      <view 
+        class="task-item {{task.status === '已完成' ? 'completed' : ''}} {{task.status === '进行中' ? 'in-progress' : ''}}"
+        wx:for="{{tasks}}"
+        wx:key="id"
+        data-id="{{item.id}}"
+        data-task="{{item}}"
+        bind:tap="viewTaskDetail"
+      >
+        <view class="task-info">
+          <view class="task-name">{{item.name}}</view>
+          <view class="task-details">
+            <text class="task-area">{{item.area}}</text>
+            <text class="task-time">{{item.time}}</text>
+          </view>
+        </view>
+        <view class="task-status">
+          <text class="status-badge {{item.status}}">{{item.status}}</text>
+          <button 
+            class="complete-btn" 
+            wx:if="{{item.status !== '已完成'}}"
+            data-id="{{item.id}}"
+            bind:tap="markTaskComplete"
+            size="mini"
+          >完成</button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 清洁用品库存 -->
+  <view class="section">
+    <view class="section-title">清洁用品库存</view>
+    <view class="supplies-list">
+      <view class="supply-item" wx:for="{{supplies}}" wx:key="name">
+        <view class="supply-name">{{item.name}}</view>
+        <view class="supply-quantity">
+          <text class="quantity">{{item.quantity}}</text>
+          <text class="unit">{{item.unit}}</text>
+        </view>
+      </view>
+    </view>
+    <button class="apply-btn" bind:tap="applySupply">申请补给</button>
+  </view>
+
+  <!-- 功能按钮 -->
+  <view class="action-buttons">
+    <button class="action-btn" bind:tap="viewWorkRecords">工作记录</button>
+    <button class="action-btn primary">打卡上班</button>
+  </view>
+</view>
