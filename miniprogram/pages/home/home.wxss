@@ -38,3 +38,32 @@
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 0 20rpx rgba(255, 255, 255, 0.5);
 }
+
+/* 测试按钮样式 */
+.test-button-container {
+  position: fixed;
+  bottom: 160rpx;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+}
+
+.test-button {
+  background: rgba(76, 175, 80, 0.9) !important;
+  color: white !important;
+  font-size: 24rpx !important;
+  padding: 12rpx 24rpx !important;
+  border-radius: 20rpx !important;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.test-button:hover {
+  opacity: 1;
+}
+
+.test-button::after {
+  border: none !important;
+}

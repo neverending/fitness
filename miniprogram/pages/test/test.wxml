@@ -1,0 +1,47 @@
+<!--pages/test/test.wxml-->
+<view class="test-container">
+  <view class="header">
+    <text class="title">角色测试页面</text>
+  </view>
+
+  <view class="section">
+    <text class="section-title">用户信息</text>
+    <view class="info-item">
+      <text>姓名: {{userInfo.name}}</text>
+    </view>
+    <view class="info-item">
+      <text>角色数量: {{userRoles.length}}</text>
+    </view>
+  </view>
+
+  <view class="section">
+    <text class="section-title">所有角色</text>
+    <view class="role-list">
+      <view class="role-item" wx:for="{{userRoles}}" wx:key="index">
+        <text class="role-icon">{{item.icon}}</text>
+        <text class="role-name">{{item.name}} ({{item.type}})</text>
+        <text class="role-index">索引: {{index}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="section">
+    <text class="section-title">调试信息</text>
+    <view class="debug-info">
+      <text>{{debugInfo}}</text>
+    </view>
+  </view>
+
+  <view class="section">
+    <text class="section-title">保洁角色检查</text>
+    <view class="check-result">
+      <text wx:if="{{userRoles.some(r => r.type === 'cleaner')}}" class="success">✅ 保洁角色存在</text>
+      <text wx:else class="error">❌ 保洁角色不存在</text>
+    </view>
+    <view class="check-result">
+      <text>保洁角色索引: {{userRoles.findIndex(r => r.type === 'cleaner')}}</text>
+    </view>
+  </view>
+
+  <button class="back-btn" bindtap="goBack">返回主页</button>
+</view>

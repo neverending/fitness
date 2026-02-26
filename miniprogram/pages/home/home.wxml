@@ -7,61 +7,37 @@
     duration="300"
     circular="{{false}}">
     
-    <!-- 会员页面 -->
-    <swiper-item wx:if="{{userRoles[0].type === 'member'}}">
-      <member-page userInfo="{{userInfo}}"></member-page>
-    </swiper-item>
-    
-    <!-- 私教页面 -->
-    <swiper-item wx:if="{{userRoles[0].type === 'trainer'}}">
-      <trainer-page userInfo="{{userInfo}}"></trainer-page>
-    </swiper-item>
-    
-    <!-- 店长页面 -->
-    <swiper-item wx:if="{{userRoles[0].type === 'manager'}}">
-      <manager-page userInfo="{{userInfo}}"></manager-page>
-    </swiper-item>
-    
-    <!-- 老板页面 -->
-    <swiper-item wx:if="{{userRoles[0].type === 'boss'}}">
-      <boss-page userInfo="{{userInfo}}"></boss-page>
-    </swiper-item>
-    
-    <!-- 保洁页面 -->
-    <swiper-item wx:if="{{userRoles[0].type === 'cleaner'}}">
-      <cleaner-page userInfo="{{userInfo}}"></cleaner-page>
-    </swiper-item>
-    
-    <swiper-item wx:if="{{userRoles[1]}}">
-      <member-page wx:if="{{userRoles[1].type === 'member'}}" userInfo="{{userInfo}}"></member-page>
-      <trainer-page wx:if="{{userRoles[1].type === 'trainer'}}" userInfo="{{userInfo}}"></trainer-page>
-      <manager-page wx:if="{{userRoles[1].type === 'manager'}}" userInfo="{{userInfo}}"></manager-page>
-      <boss-page wx:if="{{userRoles[1].type === 'boss'}}" userInfo="{{userInfo}}"></boss-page>
-      <cleaner-page wx:if="{{userRoles[1].type === 'cleaner'}}" userInfo="{{userInfo}}"></cleaner-page>
-    </swiper-item>
-    
-    <swiper-item wx:if="{{userRoles[2]}}">
-      <member-page wx:if="{{userRoles[2].type === 'member'}}" userInfo="{{userInfo}}"></member-page>
-      <trainer-page wx:if="{{userRoles[2].type === 'trainer'}}" userInfo="{{userInfo}}"></trainer-page>
-      <manager-page wx:if="{{userRoles[2].type === 'manager'}}" userInfo="{{userInfo}}"></manager-page>
-      <boss-page wx:if="{{userRoles[2].type === 'boss'}}" userInfo="{{userInfo}}"></boss-page>
-      <cleaner-page wx:if="{{userRoles[2].type === 'cleaner'}}" userInfo="{{userInfo}}"></cleaner-page>
-    </swiper-item>
-    
-    <swiper-item wx:if="{{userRoles[3]}}">
-      <member-page wx:if="{{userRoles[3].type === 'member'}}" userInfo="{{userInfo}}"></member-page>
-      <trainer-page wx:if="{{userRoles[3].type === 'trainer'}}" userInfo="{{userInfo}}"></trainer-page>
-      <manager-page wx:if="{{userRoles[3].type === 'manager'}}" userInfo="{{userInfo}}"></manager-page>
-      <boss-page wx:if="{{userRoles[3].type === 'boss'}}" userInfo="{{userInfo}}"></boss-page>
-      <cleaner-page wx:if="{{userRoles[3].type === 'cleaner'}}" userInfo="{{userInfo}}"></cleaner-page>
-    </swiper-item>
-    
-    <swiper-item wx:if="{{userRoles[4]}}">
-      <member-page wx:if="{{userRoles[4].type === 'member'}}" userInfo="{{userInfo}}"></member-page>
-      <trainer-page wx:if="{{userRoles[4].type === 'trainer'}}" userInfo="{{userInfo}}"></trainer-page>
-      <manager-page wx:if="{{userRoles[4].type === 'manager'}}" userInfo="{{userInfo}}"></manager-page>
-      <boss-page wx:if="{{userRoles[4].type === 'boss'}}" userInfo="{{userInfo}}"></boss-page>
-      <cleaner-page wx:if="{{userRoles[4].type === 'cleaner'}}" userInfo="{{userInfo}}"></cleaner-page>
+    <!-- 动态生成角色页面 -->
+    <swiper-item wx:for="{{userRoles}}" wx:key="index">
+      <!-- 会员页面 -->
+      <member-page 
+        wx:if="{{item.type === 'member'}}" 
+        userInfo="{{userInfo}}">
+      </member-page>
+      
+      <!-- 私教页面 -->
+      <trainer-page 
+        wx:elif="{{item.type === 'trainer'}}" 
+        userInfo="{{userInfo}}">
+      </trainer-page>
+      
+      <!-- 店长页面 -->
+      <manager-page 
+        wx:elif="{{item.type === 'manager'}}" 
+        userInfo="{{userInfo}}">
+      </manager-page>
+      
+      <!-- 老板页面 -->
+      <boss-page 
+        wx:elif="{{item.type === 'boss'}}" 
+        userInfo="{{userInfo}}">
+      </boss-page>
+      
+      <!-- 保洁页面 -->
+      <cleaner-page 
+        wx:elif="{{item.type === 'cleaner'}}" 
+        userInfo="{{userInfo}}">
+      </cleaner-page>
     </swiper-item>
   </swiper>
 
@@ -74,5 +50,10 @@
       data-index="{{index}}"
       bindtap="onDotTap">
     </view>
+  </view>
+
+  <!-- 测试按钮 -->
+  <view class="test-button-container">
+    <button class="test-button" bindtap="goToTest">测试角色数据</button>
   </view>
 </view>
